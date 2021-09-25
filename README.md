@@ -1,4 +1,4 @@
-# hope-dash
+# hope-ui-vue setup 
 
 ## Project setup
 ```
