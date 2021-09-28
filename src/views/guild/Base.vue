@@ -78,7 +78,6 @@ export default {
       if (json.error) {
         window.location.href = 'http://localhost:3000/login'
       } else {
-        console.log(json)
         this.settings = json
       }
     })

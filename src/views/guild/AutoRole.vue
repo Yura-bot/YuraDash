@@ -14,6 +14,8 @@
                                 <Multiselect
                                 v-model="multiselect.value"
                                 v-bind="multiselect" />
+                                <br>
+                                <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()">Enregistrer</button>
                             </div>
                         </div>
                     </div>
@@ -34,11 +36,12 @@ export default {
   data () {
     return {
       guild: this.$store.state.user.guilds.find(el => el.id === this.$route.params.id),
+      settings: {},
       multiselect: {
         mode: 'tags',
         value: [''],
         closeOnSelect: false,
-        max: 2,
+        max: 6,
         options: [
           { value: 'batman', label: 'Batman' },
           { value: 'robin', label: 'Robin' },
@@ -49,9 +52,44 @@ export default {
       }
     }
   },
+  beforeMount: async function () {
+    fetch(`http://localhost:3000/serveurs/${this.$route.params.id}/tools/autorole`, {
+      credentials: 'include'
+    }).then(async res => {
+      const json = await res.json()
+
+      if (json.error) {
+        window.location.href = 'http://localhost:3000/login'
+      } else {
+        this.settings = json
+        this.multiselect.options = json.guildRoles
+        this.multiselect.value = json.autoroleRole
+      }
+    })
+  },
   created: async function () {
     if (!this.guild) {
       window.location.href = '/404'
+    }
+  },
+  methods: {
+    async postContent () {
+      fetch(`http://localhost:3000/serveurs/${this.$route.params.id}/tools/autorole`, {
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.multiselect.value)
+      }).then(async res => {
+        const json = await res.json()
+
+        if (json.error) {
+          window.location.href = 'http://localhost:3000/login'
+        } else {
+          this.settings = json
+        }
+      })
     }
   }
 }
