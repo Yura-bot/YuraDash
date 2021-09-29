@@ -36,7 +36,6 @@
                             <div class="form-group">
                                 <label class="form-label" for="muteRole">Mute role :</label>
                                 <select class="form-select" data-trigger="" v-model="settings.muteRole" name="muteRole" id="muteRole" data-form-type="other">
-                                    <option v-if="settings.muteRole" value="001" selected="">#{{ settings.muteRole }}</option>
                                     <option v-for="(value, name) in settings.roles" :key="name" :value="name">{{ value }}</option>
                                     <option value="null">Desactivate</option>
                                 </select>

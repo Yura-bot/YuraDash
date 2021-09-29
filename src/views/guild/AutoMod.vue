@@ -135,7 +135,6 @@ export default {
         ignored_roles: this.ignored.roles.value,
         ignored_channels: this.ignored.channels.value
       }
-      console.log(ignoreds)
       fetch(`http://localhost:3000/serveurs/${this.$route.params.id}/tools/auto-mod`, {
         credentials: 'include',
         method: 'POST',
