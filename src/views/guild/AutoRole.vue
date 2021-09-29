@@ -15,7 +15,7 @@
                                 v-model="multiselect.value"
                                 v-bind="multiselect" />
                                 <br>
-                                <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()">Enregistrer</button>
+                                <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">Enregistrer</button>
                             </div>
                         </div>
                     </div>
@@ -27,6 +27,9 @@
 </template>
 <script>
 import Multiselect from '@vueform/multiselect'
+
+import { createToast } from 'mosha-vue-toastify'
+import 'mosha-vue-toastify/dist/style.css'
 
 export default {
   name: 'AutoRole',
@@ -91,6 +94,17 @@ export default {
         }
       })
     }
+  },
+  setup () {
+    const sucessToast = () => {
+      createToast('Données sauvegardées !', {
+        type: 'success',
+        hideProgressBar: 'true',
+        transition: 'bounce',
+        showIcon: 'true'
+      })
+    }
+    return { sucessToast }
   }
 }
 </script>

@@ -31,8 +31,8 @@
                                 </select>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()">Enregistrer</button>
-                            -- <button type="submit" class="btn btn-danger" data-form-type="action" @click="suppContent()">Supprimer</button>
+                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">Enregistrer</button>
+                            -- <button type="submit" class="btn btn-danger" data-form-type="action" @click="suppContent()" v-on:click="sucessToast()">Supprimer</button>
                         </div>
                     </div>
                 </div>
@@ -42,6 +42,10 @@
     </div>
 </template>
 <script>
+
+import { createToast } from 'mosha-vue-toastify'
+import 'mosha-vue-toastify/dist/style.css'
+
 export default {
   name: 'Ticket',
   data () {
@@ -88,6 +92,13 @@ export default {
             this.settings = json
           }
         })
+      } else {
+        createToast('Erreur : Veuillez bien renseigner toutes les informations..', {
+          type: 'danger',
+          hideProgressBar: 'true',
+          transition: 'bounce',
+          showIcon: 'true'
+        })
       }
     },
     async suppContent () {
@@ -108,6 +119,25 @@ export default {
         }
       })
     }
+  },
+  setup () {
+    const sucessToast = () => {
+      createToast('Données sauvegardées !', {
+        type: 'success',
+        hideProgressBar: 'true',
+        transition: 'bounce',
+        showIcon: 'true'
+      })
+    }
+    const errorToast = () => {
+      createToast('Données sauvegardées !', {
+        type: 'danger',
+        hideProgressBar: 'true',
+        transition: 'bounce',
+        showIcon: 'true'
+      })
+    }
+    return { sucessToast, errorToast }
   }
 }
 </script>

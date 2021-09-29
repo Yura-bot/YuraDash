@@ -41,7 +41,7 @@
                                 </select>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()">Enregistrer</button>
+                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">Enregistrer</button>
                         </div>
                     </div>
                 </div>
@@ -51,6 +51,10 @@
     </div>
 </template>
 <script>
+
+import { createToast } from 'mosha-vue-toastify'
+import 'mosha-vue-toastify/dist/style.css'
+
 export default {
   name: 'Base',
   data () {
@@ -105,6 +109,17 @@ export default {
         }
       })
     }
+  },
+  setup () {
+    const sucessToast = () => {
+      createToast('Données sauvegardées !', {
+        type: 'success',
+        hideProgressBar: 'true',
+        transition: 'bounce',
+        showIcon: 'true'
+      })
+    }
+    return { sucessToast }
   }
 }
 </script>
