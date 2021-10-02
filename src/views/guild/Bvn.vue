@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="choices-single-default">Channel :</label>
-                                <select class="form-select" data-trigger="" v-model="settings.welcomeChannel" name="suggestChannel" id="suggestChannel" data-form-type="other">
+                                <select class="form-select" data-trigger="" v-model="settings.welcomeChannel" name="welcomeChannel" id="welcomeChannel" data-form-type="other">
                                     <option v-for="(value, name) in settings.guildChannels" :key="name" :value="name">{{ value }}</option>
                                 </select>
                             </div>
@@ -125,7 +125,6 @@ export default {
       if (json.error) {
         window.location.href = 'http://localhost:3000/login'
       } else {
-        console.log(json)
         this.settings = json
       }
     })
