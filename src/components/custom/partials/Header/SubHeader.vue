@@ -5,8 +5,8 @@
             <div class="col-md-12">
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <div>
-                        <h1>Dashboard de Yura !</h1>
-                        <p>Yura Bot : Plus vite, plus léger et plus efficace !</p>
+                        <h1>{{ t('home.title') }}</h1>
+                        <p>{{ t('home.desc') }}</p>
                     </div>
                 </div>
             </div>
@@ -17,8 +17,18 @@
     </div>
 </div>
 </template>
+
 <script>
+import { useI18n } from 'vue-i18n'
+
 export default {
-  name: 'SubHeader'
+  name: 'SubHeader',
+  setup () {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { t }
+  }
 }
 </script>

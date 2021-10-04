@@ -1,0 +1,116 @@
+{
+    "main_title": "Yura Bot Dashboard",
+    "home": {
+        "title": "Yura Dashboard!",
+        "desc": "Yura Bot: Faster, lighter and more efficient!",
+        "stats": {
+            "servers": "Servers",
+            "members": "Members",
+            "channels": "Salons",
+            "commands": "Commands",
+            "ram": "Use of the ram."
+        },
+        "no_desc": "No description...",
+        "view_profile": "View my profile"
+    },
+    "verticalnav": {
+        "home": "Home",
+        "dash": "Dashboard",
+        "my_profil": "My profile",
+        "links": "Links",
+        "discord": "Discord",
+        "website": "Main Site",
+        "status": "Status",
+        "other": "Other",
+        "doc": "Documentation"
+    },
+    "verticalnav_settings": {
+        "settings": "Parameters",
+        "config": "Configuration",
+        "welcome": "Welcome",
+        "goodbye": "Leaving",
+        "autorole": "Autorole",
+        "auto_mod": "Auto-moderation",
+        "extensions": "Extensions",
+        "ticket": "Ticket",
+        "react_roles": "Reaction roles"
+    },
+    "header": {
+        "member": "Member",
+        "logout": "Logout"
+    },
+    "profil": {
+        "choise": "Please choose your server:",
+        "points": "Points"
+    },
+    "settings": {
+        "base": {
+            "title": "📝 Basic configuration:",
+            "prefix": "Prefix of the bot on this server:",
+            "lang": "Language of the bot on this server :",
+            "suggest": "Activate suggestions?",
+            "suggest_channel": "Suggestion Channel :",
+            "mute": "Mute role :"
+        },
+        "bvn": {
+            "title": "👋 Welcome Message Setup:",
+            "msg": "Set up your welcome message:",
+            "channel": "Channel :",
+            "img": "Welcome image ?",
+            "config_img": "Welcome image configuration:",
+            "private": {
+                "title":"👋 Configuration In Private Message:"
+            }
+        },
+        "goodbye": {
+            "title":"😢 Configure The Departure Message :",
+            "msg": "Configure Your Start Message:",
+            "channel": "Channel :",
+            "img": "Start Image ?",
+            "config_img": "Configure Start Image:"
+        },
+        "autorole": {
+            "title":"🎖️ Autorole Configuration:"
+        },
+        "automod": {
+            "title":"⚙ Auto Moderation Setup:",
+            "antiraid": "Anti Raid",
+            "antipub": "Anti Pub",
+            "antilink": "Anti Link",
+            "antibadwords": "Anti Bad Words",
+            "config":"🧱 Configuration:",
+            "ignored_channels": "ignored channels:",
+            "ignored_roles": "Roles ignored:"
+        },
+        "ticket": {
+            "title":"📚 Ticket System Configuration:",
+            "category": "Category :",
+            "channel": "Salon :",
+            "role": "Support role:"
+        },
+        "repet": {
+            "important": "Important :",
+            "info": "Info :",
+            "embed": "Embed ?",
+            "embed_warrning": "If you want to use the image you have to enable the embed!",
+            "fond": "Choose the color of the image for the background:",
+            "title": "Choose the color of the image for the title:",
+            "url": "Put the url of a background image:",
+            "goopics": "You can host your image for free on this site:",
+            "direct_link": "Attention only direct link works !!!"
+        },
+        "save": "Save",
+        "del": "Delete",
+        "activate": "Activate",
+        "desactivate": "Deactivate",
+        "var": {
+            "title": "List of variables:",
+            "mention":"➜ Mention the member:",
+            "pseudo":"➜ Display the member's nickname:",
+            "tag":"➜ Give the member's tag:",
+            "id":"➜ Give the member's id:",
+            "server":"➜ Displays the server name:",
+            "membercount":"➜ Gives the member count of the server:"
+        }
+    }
+}

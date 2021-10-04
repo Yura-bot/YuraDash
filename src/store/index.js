@@ -12,7 +12,8 @@ export default createStore({
       locale: null,
       guilds: [],
       fetchedAt: null
-    }
+    },
+    lang: localStorage.getItem('lang') || navigator.language || 'en'
   },
   mutations: {
     clear () {

@@ -9,66 +9,65 @@
                             {{ guild.name }}
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><u>😢 Configuration Du Message De Départ :</u></h5><br>
+                            <h5 class="card-title"><u>{{ t('settings.goodbye.title') }}</u></h5><br>
                             <div class="mb-3">
                                 <p>
-                                    <u>Liste des variables :</u><br>
-                                    ➜ Mentionner le membre : <mark>{member}</mark><br>
-                                    ➜ Afficher le pseudo du membre : <mark>{user}</mark><br>
-                                    ➜ Donne le tag du membre : <mark>{tag}</mark><br>
-                                    ➜ Donne l'id du membre : <mark>{memberid}</mark><br>
-                                    ➜ Affiche le nom du serveur : <mark>{server}</mark><br>
-                                    ➜ Donne le nombre de membres du serveur : <mark>{membercount}</mark><br>
+                                    <u>{{ t('settings.var.title') }}</u><br>
+                                    {{ t('settings.var.pseudo') }} <mark>{user}</mark><br>
+                                    {{ t('settings.var.tag') }} <mark>{tag}</mark><br>
+                                    {{ t('settings.var.id') }} <mark>{memberid}</mark><br>
+                                    {{ t('settings.var.server') }} <mark>{server}</mark><br>
+                                    {{ t('settings.var.membercount') }} <mark>{membercount}</mark><br>
 
                                 </p>
                             </div>
                             <div class="mb-3">
                                 <div class="form-group">
-                                    <label class="form-label" for="goodbyeMessage">Configurez votre message de bienvenue :</label>
-                                    <textarea class="form-control" id="goodbyeMessage" type="text" name="goodbyeMessage" v-model="settings.goodbyeMessage" placeholder="Votre message !" rows="5" data-form-type="other" maxlength="2000"></textarea>
+                                    <label class="form-label" for="goodbyeMessage">{{ t('settings.goodbye.msg') }}</label>
+                                    <textarea class="form-control" id="goodbyeMessage" type="text" name="goodbyeMessage" v-model="settings.goodbyeMessage" rows="5" data-form-type="other" maxlength="2000"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="choices-single-default">Channel :</label>
+                                <label class="form-label" for="choices-single-default">{{ t('settings.goodbye.channel') }}</label>
                                 <select class="form-select" data-trigger="" v-model="settings.goodbyeChannel" name="goodbyeChannel" id="goodbyeChannel" data-form-type="other">
                                     <option v-for="(value, name) in settings.guildChannels" :key="name" :value="name">{{ value }}</option>
                                 </select>
                             </div>
-                            <span class="badge rounded-pill bg-danger">Important :</span><br>
+                            <span class="badge rounded-pill bg-danger">{{ t('settings.repet.important') }}</span><br>
                             <div class="form-check form-check-inline">
                                 <input v-if="settings.goodbyeEmbedEnabled" type="checkbox" class="form-check-input" id="embed" v-model="settings.goodbyeEmbedEnabled" Checked="">
                                 <input v-else type="checkbox" class="form-check-input" id="embed" v-model="settings.goodbyeEmbedEnabled">
-                                <label class="form-check-label pl-2" for="embed">Embed ?</label>
+                                <label class="form-check-label pl-2" for="embed">{{ t('settings.repet.embed') }}</label>
                             </div>
                             <br>
                             <div class="form-check form-check-inline">
                                 <input v-if="settings.goodbyeImage" type="checkbox" class="form-check-input" id="imgbvn" v-model="settings.goodbyeImage" Checked="">
                                 <input v-else type="checkbox" class="form-check-input" id="imgbvn" v-model="settings.goodbyeImage">
-                                <label class="form-check-label pl-2" for="imgbvn">Image de bienvenue ?</label>
+                                <label class="form-check-label pl-2" for="imgbvn">{{ t('settings.goodbye.img') }}</label>
                             </div>
                             <br><br>
-                            <span class="badge rounded-pill bg-info text-dark">Info  :</span>
-                            <p>Si vous voulez utiliser l'image vous devez activer l'embed !</p>
+                            <span class="badge rounded-pill bg-info text-dark">{{ t('settings.repet.info') }}:</span>
+                            <p>{{ t('settings.repet.embed_warrning') }}</p>
                             <br>
-                            <h5><u>Configuration de l'image de départ :</u></h5>
+                            <h5><u>{{ t('settings.goodbye.config_img') }}</u></h5>
                             <br>
                             <div class="form-group">
-                                <label class="form-label" for="colorBack">Choississez la couleur de l'image pour le fond :</label>
+                                <label class="form-label" for="colorBack">{{ t('settings.repet.fond') }}</label>
                                 <input type="color" class="form-control" id="colorBack" v-model="settings.colorImage" data-form-type="other">
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="colorBack">Choississez la couleur de l'image pour le fond :</label>
+                                <label class="form-label" for="colorBack">{{ t('settings.repet.title') }}</label>
                                 <input type="color" class="form-control" id="colorBack" v-model="settings.colorImageTitle" data-form-type="other">
                             </div>
                             <div class="mb-3">
-                                <label for="imgLink" class="form-label">Mettez l'url d'une image de fond :</label>
-                                <input type="text" class="form-control" id="imgLink" v-model="settings.imageURL" name="imgLink" placeholder="Votre lien.." title="" data-form-type="other" maxlength="100">
+                                <label for="imgLink" class="form-label">{{ t('settings.repet.url') }}</label>
+                                <input type="text" class="form-control" id="imgLink" v-model="settings.imageURL" name="imgLink" title="" data-form-type="other" maxlength="100">
                             </div>
-                            <span class="badge rounded-pill bg-info text-dark">Info  :</span>
-                            <p>Vous pouvez héberger gratuitement votre image sur ce site : <a target="blank" href="https://goopics.net">https://goopics.net</a><br><strong>Attention seul le lien direct marche !!!</strong></p>
+                            <span class="badge rounded-pill bg-info text-dark">{{ t('settings.repet.info') }}</span>
+                             <p>{{ t('settings.repet.goopics') }} <a target="blank" href="https://goopics.net">https://goopics.net</a><br><strong>{{ t('settings.repet.direct_link') }}</strong></p>
                             <br>
-                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postBase()" v-on:click="sucessToast()">Activer</button>
-                            -- <button type="submit" class="btn btn-danger" data-form-type="action" @click="delBase()" v-on:click="sucessToast()">Désactiver</button>
+                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postBase()" v-on:click="sucessToast()">{{ t('settings.activate') }}</button>
+                            -- <button type="submit" class="btn btn-danger" data-form-type="action" @click="delBase()" v-on:click="sucessToast()">{{ t('settings.desactivate') }}</button>
                         </div>
                     </div>
                 </div>
@@ -81,6 +80,8 @@
 
 import { createToast } from 'mosha-vue-toastify'
 import 'mosha-vue-toastify/dist/style.css'
+
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'Goodbye',
@@ -184,7 +185,11 @@ export default {
         showIcon: 'true'
       })
     }
-    return { sucessToast }
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { sucessToast, t }
   }
 }
 </script>

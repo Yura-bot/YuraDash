@@ -18,7 +18,7 @@
     </div>
     <div class="input-group search-input">
       <div class="left-header col horizontal-wrapper ps-0">
-          <li class="mega-menu"><a class="nav-link" href="javascript:window.Metomic('ConsentManager:show')" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg><span> Yura Bot Dashboard</span></a>
+          <li class="mega-menu"><a class="nav-link" href="javascript:window.Metomic('ConsentManager:show')" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg><span>  {{ " "+ t('main_title') }}</span></a>
           </li>
       </div>
     </div>
@@ -33,17 +33,17 @@
       <ul class="navbar-nav ms-auto  navbar-list mb-2 mb-lg-0">
         <li class="nav-item dropdown">
             <a href="#" class="search-toggle nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" class="img-fluid" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
+            <img :src="`https://lipis.github.io/flag-icon-css/flags/4x3/${lang === 'en' ? 'um': lang}.svg`" class="img-fluid" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
             <span class="bg-primary"></span>
             </a>
             <div class="sub-drop dropdown-menu dropdown-menu-end p-0" aria-labelledby="dropdownMenuButton2">
                 <div class="card shadow-none m-0 border-0">
                     <div class=" p-0 ">
                         <ul class="list-group list-group-flush p-0">
-                            <li class="iq-sub-card list-group-item"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/es.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>Spanish</a></li>
-                            <li class="iq-sub-card list-group-item"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/um.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>English</a></li>
-                            <li class="iq-sub-card list-group-item"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>French</a></li>
-                            <li class="iq-sub-card list-group-item"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/de.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>German</a></li>
+                            <li class="iq-sub-card list-group-item" @click="handleChange('es')"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/es.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>Spanish</a></li>
+                            <li class="iq-sub-card list-group-item" @click="handleChange('en')"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/um.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>English</a></li>
+                            <li class="iq-sub-card list-group-item" @click="handleChange('fr')"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>French</a></li>
+                            <li class="iq-sub-card list-group-item" @click="handleChange('de')"><a class="p-0" href="#"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/de.svg" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>German</a></li>
                         </ul>
                     </div>
                 </div>
@@ -208,14 +208,13 @@
             <img :src="`https://cdn.discordapp.com/avatars/${this.$store.state.user.id}/${this.$store.state.user.avatar}.png`" alt="User-Profile" class="img-fluid avatar avatar-50 avatar-rounded">
             <div class="caption ms-3 d-none d-md-block ">
                 <h6 class="mb-0 caption-title">{{  this.$store.state.user.username }}</h6>
-                <p class="mb-0 caption-sub-title">Membre</p>
+                <p class="mb-0 caption-sub-title">{{ t('header.member') }}</p>
             </div>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><router-link class="dropdown-item" :to="{name: 'default.UserProfile'}">Profil</router-link></li>
-            <li><router-link class="dropdown-item" to="/">Privacy Setting</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            <li><a class="dropdown-item" href="/logout">{{ t('header.logout') }}</a></li>
           </ul>
         </li>
       </ul>
@@ -224,6 +223,9 @@
 </nav>
 </template>
 <script>
+
+import { useI18n } from 'vue-i18n'
+
 export default {
   name: 'HeaderStyle',
   props: {
@@ -231,12 +233,16 @@ export default {
   },
   data () {
     return {
-      lang: 'FR'
+      lang: localStorage.getItem('lang') || navigator.language || 'en'
     }
   },
   methods: {
     opensidebar () {
       this.$emit('makefullsidebar', !this.fullsidebar)
+    },
+    handleChange (event) {
+      localStorage.setItem('lang', event)
+      window.location.reload()
     },
     switchTheme () {
       const body = document.querySelector('body')
@@ -250,6 +256,13 @@ export default {
         localStorage.setItem('theme', 'light')
       }
     }
+  },
+  setup () {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { t }
   }
 }
 </script>

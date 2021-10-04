@@ -9,13 +9,13 @@
                             {{ guild.name }}
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><u>🎖️ Configuration De L'autorole :</u></h5><br>
+                            <h5 class="card-title"><u>{{ t('settings.autorole.title') }}</u></h5><br>
                             <div class="mb-3">
                                 <Multiselect
                                 v-model="multiselect.value"
                                 v-bind="multiselect" />
                                 <br>
-                                <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">Enregistrer</button>
+                                <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">{{ t('settings.save') }}</button>
                             </div>
                         </div>
                     </div>
@@ -30,6 +30,8 @@ import Multiselect from '@vueform/multiselect'
 
 import { createToast } from 'mosha-vue-toastify'
 import 'mosha-vue-toastify/dist/style.css'
+
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'AutoRole',
@@ -104,7 +106,12 @@ export default {
         showIcon: 'true'
       })
     }
-    return { sucessToast }
+
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { sucessToast, t }
   }
 }
 </script>

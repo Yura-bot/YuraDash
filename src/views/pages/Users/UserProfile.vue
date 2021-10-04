@@ -34,14 +34,14 @@
                           </div>
                           <div>
                             <h1 class="text-success counter" style="visibility: visible;">{{ points }}</h1>
-                            <p class="text-success mb-0">Points</p>
+                            <p class="text-success mb-0">{{ t('profil.points') }}</p>
                           </div>
                       </div>
                     </div>
                 </div>
               </div>
 
-               <h2>Veuillez choisir votre serveur : </h2>
+               <h2>{{ t('profil.choise') }}</h2>
 
                <div class="guild-container">
                   <div class="serv-container">
@@ -65,7 +65,9 @@
     </div>
 </template>
 <script>
+import { useI18n } from 'vue-i18n'
 const fslightbox = () => import('@/assets/js/fslightbox.js')
+
 export default {
   name: 'UserProfile',
   data () {
@@ -90,7 +92,14 @@ export default {
       }
     })
   },
-  methods: {}
+  methods: {},
+  setup () {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { t }
+  }
 }
 </script>
 

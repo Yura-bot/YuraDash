@@ -3,7 +3,7 @@
       <div class="col-lg-3 col-md-6">
          <div class="card">
             <div class="card-body">
-               <div class="text-center">Serveurs</div>
+               <div class="text-center">{{ t('home.stats.servers') }}</div>
                <div class="d-flex align-items-center justify-content-between mt-3">
                   <div>
                      <h2> <Vue3autocounter  ref='counter' :startAmount='0' :endAmount='stats.guildCount'/></h2>
@@ -22,7 +22,7 @@
       <div class="col-lg-3 col-md-6">
          <div class="card">
             <div class="card-body">
-               <div class="text-center">Membres</div>
+               <div class="text-center">{{ t('home.stats.members') }}</div>
                <div class="d-flex align-items-center justify-content-between mt-3">
                   <div>
                         <h2> <Vue3autocounter  ref='counter' :startAmount='0' :endAmount='stats.membersCount'/></h2>
@@ -44,7 +44,7 @@
       <div class="col-lg-3 col-md-6">
          <div class="card">
             <div class="card-body">
-               <div class="text-center">Salons</div>
+               <div class="text-center">{{ t('home.stats.channels') }}</div>
                <div class="d-flex align-items-center justify-content-between mt-3">
                   <div>
                         <h2> <Vue3autocounter  ref='counter' :startAmount='0' :endAmount='stats.channelsCount'/></h2>
@@ -64,7 +64,7 @@
       <div class="col-lg-3 col-md-6">
          <div class="card">
             <div class="card-body">
-               <div class="text-center">Commandes</div>
+               <div class="text-center">{{ t('home.stats.commands') }}</div>
                <div class="d-flex align-items-center justify-content-between mt-3">
                   <div>
                         <h2> <Vue3autocounter  ref='counter' :startAmount='0' :endAmount='stats.commands'/></h2>
@@ -88,7 +88,7 @@
         <div class="card-body p-3">
             <div class="text-center">
               <h1 class="counter mb-2" style="visibility: visible;"><Vue3autocounter ref='counter' :startAmount='0' :duration='2' :decimals='2' :endAmount='system.ram'/>MB</h1>
-              <p class="mb-0">Utilisation de la ram.</p>
+              <p class="mb-0">{{ t('home.stats.ram') }}</p>
             </div>
         </div>
       </div>
@@ -101,8 +101,8 @@
                <div>
                   <h5 class="mb-3">{{ this.$store.state.user.username }}</h5>
                </div>
-               <p>Aucune description...</p>
-               <router-link class="btn btn-info mb-2" :to="{name: 'default.UserProfile'}">Voir mon profil</router-link>
+               <p>{{ t('home.no_desc') }}</p>
+               <router-link class="btn btn-info mb-2" :to="{name: 'default.UserProfile'}">{{ t('home.view_profile') }}</router-link>
             </div>
          </div>
       </div>
@@ -111,6 +111,8 @@
 </template>
 <script>
 import Vue3autocounter from 'vue3-autocounter'
+import { useI18n } from 'vue-i18n'
+
 export default {
   name: 'dashboard',
   components: {
@@ -130,6 +132,13 @@ export default {
       this.stats = json.stats
       this.system = json.system
     })
+  },
+  setup () {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { t }
   }
 }
 </script>

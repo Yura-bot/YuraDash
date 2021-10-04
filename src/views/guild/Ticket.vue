@@ -9,30 +9,30 @@
                             {{ guild.name }}
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><u>📚 Configuration Du Système De Ticket :</u></h5><br>
+                            <h5 class="card-title"><u>{{ t('settings.ticket.title') }}</u></h5><br>
                             <div class="mb-3">
-                                <label for="prefix" class="form-label">Catégorie :</label>
+                                <label for="prefix" class="form-label">{{ t('settings.ticket.category') }}</label>
                                 <select class="form-select" data-trigger="" v-model="settings.category" name="categorie" id="categorie" data-form-type="other">
                                     <option v-for="(value, name) in settings.guildCategory" :key="name" :value="name">{{ value }}</option>
                                 </select>
                             </div>
                             <br>
                             <div class="mb-3">
-                                <label for="prefix" class="form-label">Salon :</label>
+                                <label for="prefix" class="form-label">{{ t('settings.ticket.channel') }}</label>
                                 <select class="form-select" data-trigger="" v-model="settings.channel" name="salon" id="salon" data-form-type="other">
                                     <option v-for="(value, name) in settings.guildChannels" :key="name" :value="name">{{ value }}</option>
                                 </select>
                             </div>
                             <br>
                             <div class="mb-3">
-                                <label for="prefix" class="form-label">Support role :</label>
+                                <label for="prefix" class="form-label">{{ t('settings.ticket.role') }}</label>
                                 <select class="form-select" data-trigger="" v-model="settings.role" name="role" id="role" data-form-type="other">
                                     <option v-for="(value, name) in settings.guildRoles" :key="name" :value="name">{{ value }}</option>
                                 </select>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">Enregistrer</button>
-                            -- <button type="submit" class="btn btn-danger" data-form-type="action" @click="suppContent()" v-on:click="sucessToast()">Supprimer</button>
+                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">{{ t('settings.save') }}</button>
+                            -- <button type="submit" class="btn btn-danger" data-form-type="action" @click="suppContent()" v-on:click="sucessToast()">{{ t('settings.del') }}</button>
                         </div>
                     </div>
                 </div>
@@ -45,6 +45,8 @@
 
 import { createToast } from 'mosha-vue-toastify'
 import 'mosha-vue-toastify/dist/style.css'
+
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'Ticket',
@@ -137,7 +139,12 @@ export default {
         showIcon: 'true'
       })
     }
-    return { sucessToast, errorToast }
+
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { sucessToast, errorToast, t }
   }
 }
 </script>

@@ -1,0 +1,116 @@
+{
+    "main_title": "Yura Bot Dashboard",
+    "home": {
+        "title": "Dashboard de Yura !",
+        "desc": "Yura Bot : Plus vite, plus léger et plus efficace !",
+        "stats": {
+            "servers": "Serveurs",
+            "members": "Membres",
+            "channels": "Salons",
+            "commands": "Commandes",
+            "ram": "Utilisation de la ram."
+        },
+        "no_desc": "Aucune description...",
+        "view_profile": "Voir mon profil"
+    },
+    "verticalnav": {
+        "home": "Accueil",
+        "dash": "Dashboard",
+        "my_profil": "Mon profil",
+        "links": "Liens",
+        "discord": "Discord",
+        "website": "Site Principal",
+        "status": "Status",
+        "other": "Autres",
+        "doc": "Documentation"
+    },
+    "verticalnav_settings": {
+        "settings": "Paramètres",
+        "config": "Configuration",
+        "welcome": "Bienvenue",
+        "goodbye": "Départ",
+        "autorole": "Autorole",
+        "auto_mod": "Auto-modération",
+        "extensions": "Extensions",
+        "ticket": "Ticket",
+        "react_roles": "Reaction roles"
+    },
+    "header": {
+        "member": "Membre",
+        "logout": "Déconnexion"
+    },
+    "profil": {
+        "choise": "Veuillez choisir votre serveur :",
+        "points": "Points"
+    },
+    "settings": {
+        "base": {
+            "title": "📝 Configuration Basique :",
+            "prefix": "Prefix du bot sur ce serveur :",
+            "lang": "Langue du bot sur ce serveur :",
+            "suggest": "Activer les suggestions ?",
+            "suggest_channel": "Suggestion Channel :",
+            "mute": "Mute role :"
+        },
+        "bvn": {
+            "title": "👋 Configuration Du Message De Bienvenue :",
+            "msg": "Configurez votre message de bienvenue :",
+            "channel": "Channel :",
+            "img": "Image de bienvenue ?",
+            "config_img": "Configuration de l'image de bienvenue :",
+            "private": {
+                "title": "👋 Configuration En Message Privé :"
+            }
+        },
+        "goodbye": {
+            "title": "😢 Configuration Du Message De Départ :",
+            "msg": "Configurez votre message de départ :",
+            "channel": "Channel :",
+            "img": "Image de départ ?",
+            "config_img": "Configuration de l'image de départ :"
+        },
+        "autorole": {
+            "title": "🎖️ Configuration De L'autorole :"
+        },
+        "automod": {
+            "title": "⚙ Configuration De L'auto Modération :",
+            "antiraid": "Anti Raid",
+            "antipub": "Anti Pub",
+            "antilink": "Anti Link",
+            "antibadwords": "Anti Bad Words",
+            "config": "🧱 Configuration :",
+            "ignored_channels": "Channels ignorées :",
+            "ignored_roles": "Roles ignorées :"
+        },
+        "ticket": {
+            "title": "📚 Configuration Du Système De Ticket :",
+            "category": "Catégorie :",
+            "channel": "Salon :",
+            "role": "Support role :"
+        },
+        "repet": {
+            "important": "Important :",
+            "info": "Info :",
+            "embed": "Embed ?",
+            "embed_warrning": "Si vous voulez utiliser l'image vous devez activer l'embed !",
+            "fond": "Choississez la couleur de l'image pour le fond :",
+            "title": "Choississez la couleur de l'image pour le titre :",
+            "url": "Mettez l'url d'une image de fond :",
+            "goopics": "Vous pouvez héberger gratuitement votre image sur ce site :",
+            "direct_link": "Attention seul le lien direct marche !!!"
+        },
+        "save": "Enregistrer",
+        "del": "Supprimer",
+        "activate": "Activer",
+        "desactivate": "Désactiver",
+        "var": {
+            "title": "Liste des variables :",
+            "mention": "➜ Mentionner le membre :",
+            "pseudo": "➜ Afficher le pseudo du membre :",
+            "tag": "➜ Donne le tag du membre :",
+            "id": "➜ Donne l'id du membre :",
+            "server": "➜ Affiche le nom du serveur :",
+            "membercount": "➜ Donne le nombre de membres du serveur :"
+        }
+    }
+}

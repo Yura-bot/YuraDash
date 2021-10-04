@@ -9,13 +9,13 @@
                             {{ guild.name }}
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><u>📝 Configuration Basique :</u></h5><br>
+                            <h5 class="card-title"><u>{{ t('settings.base.title') }}</u></h5><br>
                             <div class="mb-3">
-                                <label for="prefix" class="form-label">Prefix du bot sur ce serveur :</label>
-                                <input type="text" class="form-control" v-model="settings.prefix" id="prefix" maxlength="3" minlength="1" name="prefix" placeholder="Votre prefix" title="" data-form-type="other">
+                                <label for="prefix" class="form-label">{{ t('settings.base.prefix') }}</label>
+                                <input type="text" class="form-control" v-model="settings.prefix" id="prefix" maxlength="3" minlength="1" name="prefix" title="" data-form-type="other">
                             </div>
                             <div class="mb-3">
-                                <label for="prefix" class="form-label">Langue du bot sur ce serveur :</label>
+                                <label for="prefix" class="form-label">{{ t('settings.base.lang') }}</label>
                                 <select class="form-select mb-3 shadow-none" aria-label=".form-select-lg example" v-model="settings.guildLanguage">
                                     <option v-for="lang in langs" :key="lang" :value="lang">{{ lang }}</option>
                                 </select>
@@ -24,24 +24,24 @@
                             <div class="form-check form-check-inline">
                                 <input v-if="settings.suggestionEnabled" type="checkbox" class="form-check-input" id="suggest?" v-model="settings.suggestionEnabled" Checked="">
                                 <input v-else type="checkbox" class="form-check-input" id="suggest?" v-model="settings.suggestionEnabled">
-                                <label class="form-check-label pl-2" for="suggest?">Activer les suggestions ?</label>
+                                <label class="form-check-label pl-2" for="suggest?">{{ t('settings.base.suggest') }}</label>
                             </div>
                             <br><br>
                             <div class="form-group">
-                                <label class="form-label" for="suggestChannel">Suggestion Channel :</label>
+                                <label class="form-label" for="suggestChannel">{{ t('settings.base.suggest_channel') }}</label>
                                 <select class="form-select" data-trigger="" v-model="settings.suggestionChannel" name="suggestChannel" id="suggestChannel" data-form-type="other">
                                     <option v-for="(value, name) in settings.channels" :key="name" :value="name">{{ value }}</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="muteRole">Mute role :</label>
+                                <label class="form-label" for="muteRole">{{ t('settings.base.mute') }}</label>
                                 <select class="form-select" data-trigger="" v-model="settings.muteRole" name="muteRole" id="muteRole" data-form-type="other">
                                     <option v-for="(value, name) in settings.roles" :key="name" :value="name">{{ value }}</option>
                                     <option value="null">Desactivate</option>
                                 </select>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">Enregistrer</button>
+                            <button type="submit" class="btn btn-primary" data-form-type="action" @click="postContent()" v-on:click="sucessToast()">{{ t('settings.save') }}</button>
                         </div>
                     </div>
                 </div>
@@ -54,6 +54,8 @@
 
 import { createToast } from 'mosha-vue-toastify'
 import 'mosha-vue-toastify/dist/style.css'
+
+import { useI18n } from 'vue-i18n'
 
 export default {
   name: 'Base',
@@ -119,7 +121,11 @@ export default {
         showIcon: 'true'
       })
     }
-    return { sucessToast }
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local'
+    })
+    return { sucessToast, t }
   }
 }
 </script>

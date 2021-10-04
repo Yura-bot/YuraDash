@@ -1,0 +1,116 @@
+{
+    "main_title": "Yura Bot Dashboard",
+    "home": {
+      "title": "Yura Dashboard!",
+      "desc": "Yura Bot: ¡Más rápido, más ligero y más eficiente!",
+      "stats": {
+        "servers": "Servidores",
+        "members": "Miembros",
+        "channels": "Salones",
+        "commands": "Comandos",
+        "ram": "Uso del carnero."
+      },
+      "no_desc": "No hay descripción...",
+      "view_profile": "Ver mi perfil"
+    },
+    "verticalnav": {
+      "home": "Inicio",
+      "dash": "Dashboard",
+      "my_profil": "Mi perfil",
+      "links": "Enlaces",
+      "discord": "Discord",
+      "website": "Sitio principal",
+      "status": "Estado",
+      "other": "Otros",
+      "doc": "Documentación"
+    },
+    "verticalnav_settings": {
+      "settings": "Parámetros",
+      "config": "Configuración",
+      "welcome": "Bienvenido",
+      "goodbye": "Saliendo",
+      "autorole": "Autorole",
+      "auto_mod": "Auto-moderación",
+      "extensions": "Extensiones",
+      "ticket": "Billete",
+      "react_roles": "Roles de reacción"
+    },
+    "header": {
+      "member": "Miembro",
+      "logout": "Cierre de sesión"
+    },
+    "profil": {
+      "choise": "Por favor, elija su servidor:",
+      "points": "Puntos"
+    },
+    "settings": {
+      "base": {
+        "title": "📝 Configuración básica:",
+        "prefix": "Prefijo del bot en este servidor:",
+        "lang": "Idioma del bot en este servidor :",
+        "suggest": "¿Activar las sugerencias?",
+        "suggest_channel": "Canal de sugerencias :",
+        "mute": "Función de silencio :"
+      },
+      "bvn": {
+        "title": "👋 Configuración del mensaje de bienvenida :",
+        "msg": "Configure su mensaje de bienvenida :",
+        "channel": "Canal :",
+        "img": "Imagen de bienvenida ?",
+        "config_img": "Configuración de la imagen de bienvenida:",
+        "private": {
+          "title": "👋 Configuración en mensaje privado:"
+        }
+      },
+      "goodbye": {
+        "title": "😢 Configurar el mensaje de salida :",
+        "msg": "Configure su mensaje de inicio:",
+        "channel": "Canal :",
+        "img": "Inicio de la imagen ?",
+        "config_img": "Configurar la imagen de inicio:"
+      },
+      "autorole": {
+        "title": "🎖️ Configuración de la autopista:"
+      },
+      "automod": {
+        "title": "⚙ Configuración de la moderación automática:",
+        "antiraid": "Anti-Raid",
+        "antipub": "Anti Pub",
+        "antilink": "Anti Enlace",
+        "antibadwords": "Anti Malas Palabras",
+        "config": "🧱 Configuración:",
+        "ignored_channels": "canales ignorados:",
+        "ignored_roles": "Roles ignorados:"
+      },
+      "ticket": {
+        "title": "📚 Configuración del sistema de tickets :",
+        "category": "Categoría :",
+        "channel": "Salón :",
+        "role": "Función de apoyo:"
+      },
+      "repet": {
+        "important": "Importante :",
+        "info": "Información :",
+        "embed": "¿Incorporar?",
+        "embed_warrning": "Si quieres usar la imagen tienes que habilitar el embed!",
+        "fond": "Elija el color de la imagen para el fondo:",
+        "title": "Elija el color de la imagen para el título:",
+        "url": "Poner la url de una imagen de fondo:",
+        "goopics": "Puede alojar su imagen gratuitamente en este sitio:",
+        "direct_link": "Atención: ¡¡¡sólo funciona el enlace directo!!!"
+      },
+      "save": "Guardar",
+      "del": "Borrar",
+      "activate": "Activar",
+      "desactivate": "Desactivar",
+      "var": {
+        "title": "Lista de variables:",
+        "mention": "➜ Mencionar al socio:",
+        "pseudo": "➜ Mostrar el apodo del miembro:",
+        "tag": "➜ Dar la etiqueta del miembro:",
+        "id": "➜ Dar la identificación del miembro:",
+        "server": "➜ Muestra el nombre del servidor:",
+        "membercount": "➜ Da el recuento de miembros del servidor:"
+      }
+    }
+  }
