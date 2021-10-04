@@ -1,4 +1,4 @@
-# hope-ui-vue setup 
+# yura-dashboard setup 
 
 ## Project setup
 ```
