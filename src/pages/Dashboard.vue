@@ -125,7 +125,7 @@ export default {
     }
   },
   beforeMount: async function () {
-    fetch('http://localhost:3000/infos', {
+    fetch('https://api.yurabot.xyz/infos', {
       credentials: 'include'
     }).then(async res => {
       const json = await res.json()

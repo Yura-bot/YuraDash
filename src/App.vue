@@ -14,13 +14,13 @@ export default {
       body.classList.add('dark')
     }
 
-    fetch('http://localhost:3000/user', {
+    fetch('https://api.yurabot.xyz/user', {
       credentials: 'include'
     }).then(async res => {
       const json = await res.json()
 
       if (json.error) {
-        window.location.href = 'http://localhost:3000/login'
+        window.location.href = 'https://api.yurabot.xyz/login'
       } else {
         this.$store.commit('set', json)
       }

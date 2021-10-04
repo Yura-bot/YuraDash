@@ -57,13 +57,13 @@ export default {
     }
   },
   beforeMount: async function () {
-    fetch(`http://localhost:3000/extensions/${this.$route.params.id}/ticket`, {
+    fetch(`https://api.yurabot.xyz/extensions/${this.$route.params.id}/ticket`, {
       credentials: 'include'
     }).then(async res => {
       const json = await res.json()
 
       if (json.error) {
-        window.location.href = 'http://localhost:3000/login'
+        window.location.href = 'https://api.yurabot.xyz/login'
       } else {
         console.log(json)
         this.settings = json
@@ -78,7 +78,7 @@ export default {
   methods: {
     async postContent () {
       if (this.settings.category && this.settings.channel && this.settings.role) {
-        fetch(`http://localhost:3000/extensions/${this.$route.params.id}/ticket`, {
+        fetch(`https://api.yurabot.xyz/extensions/${this.$route.params.id}/ticket`, {
           credentials: 'include',
           method: 'POST',
           headers: {
@@ -89,7 +89,7 @@ export default {
           const json = await res.json()
 
           if (json.error) {
-            window.location.href = 'http://localhost:3000/login'
+            window.location.href = 'https://api.yurabot.xyz/login'
           } else {
             this.settings = json
           }
@@ -104,7 +104,7 @@ export default {
       }
     },
     async suppContent () {
-      fetch(`http://localhost:3000/extensions/${this.$route.params.id}/ticket`, {
+      fetch(`https://api.yurabot.xyz/extensions/${this.$route.params.id}/ticket`, {
         credentials: 'include',
         method: 'POST',
         headers: {
@@ -115,7 +115,7 @@ export default {
         const json = await res.json()
 
         if (json.error) {
-          window.location.href = 'http://localhost:3000/login'
+          window.location.href = 'https://api.yurabot.xyz/login'
         } else {
           this.settings = json
         }

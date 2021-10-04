@@ -75,13 +75,13 @@ export default {
     }
   },
   beforeMount: async function () {
-    fetch(`http://localhost:3000/serveurs/${this.$route.params.id}`, {
+    fetch(`https://api.yurabot.xyz/serveurs/${this.$route.params.id}`, {
       credentials: 'include'
     }).then(async res => {
       const json = await res.json()
 
       if (json.error) {
-        window.location.href = 'http://localhost:3000/login'
+        window.location.href = 'https://api.yurabot.xyz/login'
       } else {
         this.settings = json
       }
@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     async postContent () {
-      fetch(`http://localhost:3000/serveurs/${this.$route.params.id}`, {
+      fetch(`https://api.yurabot.xyz/serveurs/${this.$route.params.id}`, {
         credentials: 'include',
         method: 'POST',
         headers: {
@@ -105,7 +105,7 @@ export default {
         const json = await res.json()
 
         if (json.error) {
-          window.location.href = 'http://localhost:3000/login'
+          window.location.href = 'https://api.yurabot.xyz/login'
         } else {
           this.settings = json
         }

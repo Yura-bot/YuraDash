@@ -112,13 +112,13 @@ export default {
     }
   },
   beforeMount: async function () {
-    fetch(`http://localhost:3000/serveurs/${this.$route.params.id}/tools/auto-mod`, {
+    fetch(`https://api.yurabot.xyz/serveurs/${this.$route.params.id}/tools/auto-mod`, {
       credentials: 'include'
     }).then(async res => {
       const json = await res.json()
 
       if (json.error) {
-        window.location.href = 'http://localhost:3000/login'
+        window.location.href = 'https://api.yurabot.xyz/login'
       } else {
         this.settings = json
         this.ignored.roles.options = json.roles
@@ -140,7 +140,7 @@ export default {
         ignored_roles: this.ignored.roles.value,
         ignored_channels: this.ignored.channels.value
       }
-      fetch(`http://localhost:3000/serveurs/${this.$route.params.id}/tools/auto-mod`, {
+      fetch(`https://api.yurabot.xyz/serveurs/${this.$route.params.id}/tools/auto-mod`, {
         credentials: 'include',
         method: 'POST',
         headers: {
@@ -151,7 +151,7 @@ export default {
         const json = await res.json()
 
         if (json.error) {
-          window.location.href = 'http://localhost:3000/login'
+          window.location.href = 'https://api.yurabot.xyz/login'
         } else {
           this.settings = json
         }
