@@ -1,0 +1,116 @@
+{
+    "main_title": "Yura Bot Dashboard",
+    "home": {
+      "title": "Yura Dashboard!",
+      "desc": "Yura Bot: Schneller, leichter und effizienter!",
+      "stats": {
+        "servers": "Server",
+        "members": "Mitglieder",
+        "channels": "Salons",
+        "commands": "Befehle",
+        "ram": "Verwendung des Widders."
+      },
+      "no_desc": "Keine Beschreibung...",
+      "view_profile": "Mein Profil ansehen"
+    },
+    "verticalnav": {
+      "home": "Startseite",
+      "dash": "Dashboard",
+      "my_profil": "Mein Profil",
+      "links": "Links",
+      "discord": "Discord",
+      "website": "Hauptseite",
+      "status": "Status",
+      "other": "Andere",
+      "doc": "Dokumentation"
+    },
+    "verticalnav_settings": {
+      "settings": "Parameter",
+      "config": "Konfiguration",
+      "welcome": "Willkommen",
+      "goodbye": "Verlassen von",
+      "autorole": "Autorole",
+      "auto_mod": "Auto-Moderation",
+      "extensions": "Erweiterungen",
+      "ticket": "Eintrittskarte",
+      "react_roles": "Reaktionsrollen"
+    },
+    "header": {
+      "member": "Mitglied",
+      "logout": "Abmelden"
+    },
+    "profil": {
+      "choise": "Bitte wählen Sie Ihren Server:",
+      "points": "Punkte"
+    },
+    "settings": {
+      "base": {
+        "title": "📝 Grundlegende Konfiguration:",
+        "prefix": "Präfix des Bots auf diesem Server:",
+        "lang": "Sprache des Bots auf diesem Server :",
+        "suggest": "Vorschläge aktivieren?",
+        "suggest_channel": "Vorschlagskanal :",
+        "mute": "Stumme Rolle :"
+      },
+      "bvn": {
+        "title": "👋 Willkommensnachricht einrichten:",
+        "msg": "Richten Sie Ihre Willkommensnachricht ein:",
+        "channel": "Kanal :",
+        "img": "Willkommensbild ?",
+        "config_img": "Konfiguration des Willkommensbildes:",
+        "private": {
+          "title": "👋 Konfiguration in privater Nachricht:"
+        }
+      },
+      "goodbye": {
+        "title": "😢 Konfigurieren Sie die Abfahrtsmeldung :",
+        "msg": "Konfigurieren Sie Ihre Startmeldung:",
+        "channel": "Kanal :",
+        "img": "Startbild ?",
+        "config_img": "Startbild konfigurieren:"
+      },
+      "autorole": {
+        "title": "🎖️ Autorole Konfiguration:"
+      },
+      "automod": {
+        "title": "⚙ Automatische Moderation einrichten:",
+        "antiraid": "Anti-Razzia",
+        "antipub": "Anti-Pub",
+        "antilink": "Anti-Link",
+        "antibadwords": "Anti Bad Words",
+        "config": "🧱 Konfiguration:",
+        "ignored_channels": "ignorierte Kanäle:",
+        "ignored_roles": "Die Rollen werden ignoriert:"
+      },
+      "ticket": {
+        "title": "📚 Konfiguration des Ticketsystems:",
+        "category": "Kategorie :",
+        "channel": "Salons :",
+        "role": "Unterstützende Rolle:"
+      },
+      "repet": {
+        "important": "Wichtig!",
+        "info": "Info :",
+        "embed": "Embed ?",
+        "embed_warrning": "Wenn Sie das Bild verwenden möchten, müssen Sie die Einbettung aktivieren!",
+        "fond": "Wählen Sie die Farbe des Bildes für den Hintergrund:",
+        "title": "Wählen Sie die Farbe des Bildes für den Titel:",
+        "url": "Geben Sie die Url eines Hintergrundbildes ein:",
+        "goopics": "Sie können Ihr Bild kostenlos auf dieser Website hosten:",
+        "direct_link": "Achtung nur direkter Link funktioniert !!!"
+      },
+      "save": "Speichern",
+      "del": "Löschen",
+      "activate": "Aktivieren Sie",
+      "desactivate": "Deaktivieren Sie",
+      "var": {
+        "title": "Liste der Variablen:",
+        "mention": "➜ Erwähnen Sie das Mitglied:",
+        "pseudo": "➜ Zeigen Sie den Spitznamen des Mitglieds an:",
+        "tag": "➜ Geben Sie das Kennzeichen des Mitglieds an:",
+        "id": "➜ Geben Sie die Kennung des Mitglieds an:",
+        "server": "➜ Zeigt den Servernamen an:",
+        "membercount": "➜ Gibt die Anzahl der Mitglieder des Servers an:"
+      }
+    }
+  }

@@ -3,7 +3,8 @@ import { createI18n } from 'vue-i18n'
 const messages = {
   en: require('./locales/en.json'),
   fr: require('./locales/fr.json'),
-  es: require('./locales/es.json')
+  es: require('./locales/es.json'),
+  de: require('./locales/de.json')
 }
 
 export default createI18n({
